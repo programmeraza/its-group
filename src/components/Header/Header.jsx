@@ -48,7 +48,7 @@ const Header = () => {
   return (
     <div className="header">
       <video autoPlay loop muted playsInline className="header__bg">
-        <source src="./public/Logistics-Intro-Video.mp4" type="video/mp4" />
+        <source src="./Logistics-Intro-Video.mp4" type="video/mp4" />
       </video>
 
       <div className={`header__menu ${menuOpen ? "open" : ""}`}>
