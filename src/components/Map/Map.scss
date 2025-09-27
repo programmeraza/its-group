@@ -1,0 +1,249 @@
+.map {
+  padding: 60px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.map__title {
+  color: #020105;
+  font-family: "Poppins", sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  margin-bottom: 32px;
+}
+
+.map__boxes {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.map__flag {
+  max-width: 400px;
+}
+
+.map__image {
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .map__boxes {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .map__flag {
+    max-width: 100%;
+  }
+}
+
+.map__image {
+  height: clamp(18.75rem, 11.932rem + 34.09vw, 37.5rem);
+}
+
+.map__image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.map__cards {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.map__card {
+  margin: -20px;
+  width: clamp(7.875rem, 5.784rem + 10.45vw, 13.625rem);
+  height: clamp(7.875rem, 5.784rem + 10.45vw, 13.625rem);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1000px;
+  border: 1px solid #e1e6ee;
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(8.9px);
+  padding: 20px;
+  text-align: center;
+}
+
+.map__card h1 {
+  color: #0a58d6;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(1.5rem, 1.136rem + 1.82vw, 2.5rem);
+  font-weight: 500;
+  line-height: 104%;
+  margin: 0 0 10px 0;
+}
+
+.map__card p {
+  height: 34px;
+  margin: 0;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.map__box {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.map__box.active {
+  border: 1px solid #ebebeb;
+
+  box-shadow: 0 4px 15px rgba(10, 88, 214, 0.1);
+}
+
+.map__box label {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  border: 1px solid #ebebeb;
+  background: #fff;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0;
+}
+
+.map__box.active label {
+  background: #fff;
+  border: 1px solid #ebebeb;
+}
+
+.map__box label:hover {
+  background: #f8f9fa;
+}
+
+.map__box label::after {
+  content: url("/PlusCircle.svg");
+  position: absolute;
+  right: 20px;
+  transition: transform 0.3s ease;
+}
+
+.map__box.active label::after {
+  content: url("/MinusCircle.svg");
+}
+
+.map__box label img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.map__box label h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.map__box input {
+  display: none;
+}
+
+.map__box_text {
+  max-height: 0;
+  overflow: hidden;
+  background-color: #fff;
+  transition: all 0.4s ease;
+}
+
+.map__box.active .map__box_text {
+  max-height: 300px;
+  border: 1px solid #ebebeb;
+
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+}
+
+.map__info {
+  display: flex;
+  gap: 12px;
+  padding: 15px 20px;
+  align-items: flex-start;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.map__info:last-child {
+  border-bottom: none;
+}
+
+.map__info img {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.map__info p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.4;
+}
+
+.map__box_text {
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.map__box label {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (max-width: 480px) {
+  .map__box label {
+    padding: 15px;
+  }
+
+  .map__info {
+    padding: 12px 15px;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+.map__box label::after {
+  width: 20px;
+  height: 20px;
+}
+
+.map__box_text {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.4s ease;
+}
+
+.map__box.active .map__box_text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.map__box:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.map__box label {
+  border-radius: 8px 8px 0 0;
+}
+
+.map__box.active .map__box_text {
+  border-radius: 0 0 8px 8px;
+}

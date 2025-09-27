@@ -9,14 +9,16 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 20px;
         width: 100%;
         background-color: #F5F5F5;
 
         img {
             width: 100%;
-            max-width: 925px;
+            max-width: 600px;
             clip-path: polygon(86% 0, 100% 21%, 100% 100%, 0 100%, 0 0);
             object-fit: cover;
+
         }
     }
 
@@ -26,8 +28,8 @@
         align-items: start;
         gap: 24px;
         width: 100%;
-        max-width: 575px;
-        padding: 113px 0px 113px 80px;
+        max-width: 570px;
+        margin: 113px 0px 113px 80px;
 
         h1 {
             font-size: 40px;

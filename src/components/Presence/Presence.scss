@@ -1,0 +1,100 @@
+
+
+.presence {
+  padding: 80px 0;
+}
+.presence__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 32px;
+  width: 100%;
+}
+
+.presence__cards {
+  width: 100%;
+  display: grid;
+  gap: 20px;
+  justify-content: space-between;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+@media (min-width: 1500px) {
+  .presence__cards {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: calc(4 * 350px + 3 * 20px);
+    margin: 0 auto;
+  }
+}
+.presence__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  height: 300px;
+  padding: 32px;
+  border: 1px solid #ebebeb;
+  background: #fff;
+  &:hover {
+    .presence__texts {
+      max-height: 250px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .presence__card {
+    height: 280px;
+  }
+}
+
+.presence__box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  h3 {
+    color: transparent;
+    -webkit-text-stroke-width: 1.9px;
+    -webkit-text-stroke-color: #1f2937;
+    font-family: "Golos Text";
+    font-size: clamp(5rem, 4.205rem + 3.98vw, 7.188rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 0.09;
+  }
+}
+
+.presence__title {
+  color: #020105;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(1.25rem, 0.795rem + 2.27vw, 2.5rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+}
+.presence__texts {
+  max-height: 30px;
+  overflow: hidden;
+  transition: all 0.7s linear;
+  h3 {
+    height: 30px;
+    margin-bottom: 5px;
+    color: #111827;
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  p {
+    color: #353437;
+    font-family: "Golos Text";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+}
